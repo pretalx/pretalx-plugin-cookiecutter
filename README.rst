@@ -34,4 +34,4 @@ Voilà, there's your plugin structure! See pretalx' `documentation`_ for more in
 
 .. _pretalx: https://github.com/pretalx/pretalx
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
-.. _documentation: https://docs.pretalx.org/en/latest/developmer/api/plugins.html#pluginsetup
+.. _documentation: https://docs.pretalx.org/en/latest/developer/plugins/index.html

@@ -26,7 +26,7 @@ cmdclass = {'build': CustomBuild}
 setup(
     name='{{cookiecutter.repo_name}}',
     version='0.0.0',
-    description='{{cookiecutter.short_description}}',
+    description="{{cookiecutter.short_description}}",
     long_description=long_description,
     url='{{cookiecutter.repo_url}}',
     author='{{cookiecutter.author_name}}',

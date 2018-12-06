@@ -9,7 +9,7 @@ class PluginApp(AppConfig):
     class PretalxPluginMeta:
         name = ugettext_lazy('{{cookiecutter.human_name}}')
         author = '{{cookiecutter.author_name}}'
-        description = ugettext_lazy('{{cookiecutter.short_description}}')
+        description = ugettext_lazy("{{cookiecutter.short_description}}")
         visible = True
         version = '0.0.0'
 

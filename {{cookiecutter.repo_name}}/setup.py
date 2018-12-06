@@ -6,7 +6,9 @@ from setuptools import setup, find_packages
 
 
 try:
-    with open(os.path.join(os.path.dirname(__file__), 'README.rst'), encoding='utf-8') as f:
+    with open(
+        os.path.join(os.path.dirname(__file__), 'README.rst'), encoding='utf-8'
+    ) as f:
         long_description = f.read()
 except Exception:
     long_description = ''
@@ -18,9 +20,7 @@ class CustomBuild(build):
         build.run(self)
 
 
-cmdclass = {
-    'build': CustomBuild
-}
+cmdclass = {'build': CustomBuild}
 
 
 setup(
@@ -32,7 +32,6 @@ setup(
     author='{{cookiecutter.author_name}}',
     author_email='{{cookiecutter.author_email}}',
     license='Apache Software License',
-
     install_requires=[],
     packages=find_packages(exclude=['tests', 'tests.*']),
     include_package_data=True,

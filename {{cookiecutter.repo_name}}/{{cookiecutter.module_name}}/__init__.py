@@ -1,5 +1,5 @@
 from django.apps import AppConfig
-from django.utils.translation import ugettext_lazy
+from django.utils.translation import gettext_lazy
 
 
 class PluginApp(AppConfig):
@@ -7,9 +7,9 @@ class PluginApp(AppConfig):
     verbose_name = "{{cookiecutter.human_name}}"
 
     class PretalxPluginMeta:
-        name = ugettext_lazy("{{cookiecutter.human_name}}")
+        name = gettext_lazy("{{cookiecutter.human_name}}")
         author = "{{cookiecutter.author_name}}"
-        description = ugettext_lazy("{{cookiecutter.short_description}}")
+        description = gettext_lazy("{{cookiecutter.short_description}}")
         visible = True
         version = "0.0.0"
 

@@ -12,6 +12,7 @@ on:
       - '{{cookiecutter.module_name}}/locale/**'
       - '{{cookiecutter.module_name}}/static/**'
 
+{% raw %}
 jobs:
   isort:
     name: isort
@@ -128,3 +129,4 @@ jobs:
       - name: Check package
         run: twine check dist/*
         working-directory: .
+{% endraw %}

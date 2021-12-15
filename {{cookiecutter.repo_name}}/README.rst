@@ -23,7 +23,7 @@ Development setup
 License
 -------
 
-Copyright {{cookiecutter.year}} {{cookiecutter.author_name}}
+Copyright {% now 'utc', '%Y' %} {{cookiecutter.author_name}}
 
 Released under the terms of the Apache License 2.0
 

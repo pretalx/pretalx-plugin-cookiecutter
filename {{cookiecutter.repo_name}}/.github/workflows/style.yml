@@ -57,7 +57,7 @@ jobs:
       - name: Install pretalx
         run: pip3 install pretalx
       - name: Install Dependencies
-        run: pip3 install flake8 -Ue .
+        run: pip3 install flake8 flake8-bugbear -Ue .
       - name: Run flake8
         run: flake8 .
         working-directory: .

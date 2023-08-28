@@ -4,6 +4,6 @@
 	"module_name": "pretalx_superplugin",
 	"human_name": "The pretalx super plugin",
 	"author_name": "Your name",
-	"author_email": "Your email",
+	"author_email": "your-email@example.org",
 	"short_description": "Short description"
 }

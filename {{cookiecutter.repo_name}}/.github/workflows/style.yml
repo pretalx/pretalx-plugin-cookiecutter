@@ -21,10 +21,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: install gettext
         run: sudo apt install gettext
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pip
@@ -44,10 +44,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: install gettext
         run: sudo apt install gettext
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pip
@@ -68,10 +68,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: install gettext
         run: sudo apt install gettext
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pip
@@ -92,10 +92,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: install gettext
         run: sudo apt install gettext
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pip
@@ -116,10 +116,10 @@ jobs:
       - uses: actions/checkout@v2
       - name: install gettext
         run: sudo apt install gettext
-      - name: Set up Python 3.10
+      - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.10"
+          python-version: "3.11"
       - uses: actions/cache@v1
         with:
           path: ~/.cache/pip

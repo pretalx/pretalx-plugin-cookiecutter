@@ -106,9 +106,6 @@ jobs:
         run: pip3 install pretalx
       - name: Install Dependencies
         run: pip3 install djhtml -Ue .
-      - name: Run docformatter
-        run: find -name "*.html" | xargs djhtml -c
-        working-directory: .
   packaging:
     name: packaging
     runs-on: ubuntu-latest

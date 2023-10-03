@@ -1,6 +1,8 @@
 from django.apps import AppConfig
 from django.utils.translation import gettext_lazy
 
+from . import __version__
+
 
 class PluginApp(AppConfig):
     name = "{{cookiecutter.module_name}}"
@@ -11,7 +13,7 @@ class PluginApp(AppConfig):
         author = "{{cookiecutter.author_name}}"
         description = gettext_lazy("{{cookiecutter.short_description}}")
         visible = True
-        version = "0.0.0"
+        version = __version__
         category = "{{cookiecutter.category}}"
 
     def ready(self):

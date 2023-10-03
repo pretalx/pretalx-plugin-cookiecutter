@@ -1,6 +1,6 @@
 [project]
 name = "{{cookiecutter.repo_name}}"
-version = "0.0.0"
+dynamic = ["version"]
 description = "{{cookiecutter.short_description}}"
 readme = "README.rst"
 license = {text = "Apache Software License"}
@@ -29,6 +29,9 @@ repository = "{{cookiecutter.repo_url}}.git"
 
 [tool.setuptools]
 include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "{{cookiecutter.module_name}}.__version__"}
 
 [tool.setuptools.packages.find]
 include = ["pretalx*"]

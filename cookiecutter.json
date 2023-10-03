@@ -5,5 +5,6 @@
 	"human_name": "The pretalx super plugin",
 	"author_name": "Your name",
 	"author_email": "your-email@example.org",
-	"short_description": "Short description"
+	"short_description": "Short description",
+	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"]
 }

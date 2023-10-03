@@ -24,6 +24,15 @@ project folder created for you::
     author_name [Your name]: J Random Developer
     author_email [Your email]: jrandom@example.org
     short_description [Short description]: The best plugin
+    Select category:
+    1 - FEATURE
+    2 - INTEGRATION
+    3 - CUSTOMIZATION
+    4 - EXPORTER
+    5 - RECORDING
+    6 - LANGUAGE
+    7 - OTHER
+    Choose from 1, 2, 3, 4, 5 [1]: 1
 
 Now, change to the newly created directory::
 

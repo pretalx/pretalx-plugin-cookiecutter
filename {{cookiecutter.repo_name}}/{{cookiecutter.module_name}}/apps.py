@@ -12,6 +12,7 @@ class PluginApp(AppConfig):
         description = gettext_lazy("{{cookiecutter.short_description}}")
         visible = True
         version = "0.0.0"
+        category = "{{cookiecutter.category}}"
 
     def ready(self):
         from . import signals  # NOQA

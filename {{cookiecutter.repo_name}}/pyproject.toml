@@ -1,0 +1,34 @@
+[project]
+name = "{{cookiecutter.repo_name}}"
+version = "0.0.0"
+description = "{{cookiecutter.short_description}}"
+readme = "README.rst"
+license = {text = "Apache Software License"}
+keywords = ["pretalx"]
+authors = [
+    {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
+]
+maintainers = [
+    {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
+]
+
+dependencies = [
+]
+
+[project.entry-points."pretalx.plugin"]
+{{cookiecutter.module_name}} = "{{cookiecutter.module_name}}:PretalxPluginMeta"
+
+[build-system]
+requires = [
+    "setuptools",
+]
+
+[project.urls]
+homepage = "{{cookiecutter.repo_url}}"
+repository = "{{cookiecutter.repo_url}}.git"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["pretalx*"]

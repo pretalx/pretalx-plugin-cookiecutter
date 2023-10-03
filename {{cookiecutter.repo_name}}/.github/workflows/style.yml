@@ -12,7 +12,6 @@ on:
       - '{{cookiecutter.module_name}}/locale/**'
       - '{{cookiecutter.module_name}}/static/**'
 
-{% raw %}
 jobs:
   isort:
     name: isort
@@ -24,13 +23,8 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.11"
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version-file: ".github/workflows/python-version.txt"
+          cache: "pip"
       - name: Install pretalx
         run: pip3 install pretalx
       - name: Install Dependencies
@@ -47,13 +41,8 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.11"
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version-file: ".github/workflows/python-version.txt"
+          cache: "pip"
       - name: Install pretalx
         run: pip3 install pretalx
       - name: Install Dependencies
@@ -71,13 +60,8 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.11"
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version-file: ".github/workflows/python-version.txt"
+          cache: "pip"
       - name: Install pretalx
         run: pip3 install pretalx
       - name: Install Dependencies
@@ -95,13 +79,8 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.11"
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version-file: ".github/workflows/python-version.txt"
+          cache: "pip"
       - name: Install pretalx
         run: pip3 install pretalx
       - name: Install Dependencies
@@ -116,13 +95,8 @@ jobs:
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
-          python-version: "3.11"
-      - uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          python-version-file: ".github/workflows/python-version.txt"
+          cache: "pip"
       - name: Install pretalx
         run: pip3 install pretalx
       - name: Install Dependencies
@@ -136,4 +110,3 @@ jobs:
       - name: Check package
         run: twine check dist/*
         working-directory: .
-{% endraw %}

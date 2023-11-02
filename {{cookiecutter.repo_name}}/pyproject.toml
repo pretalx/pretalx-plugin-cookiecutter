@@ -6,26 +6,24 @@ readme = "README.rst"
 license = {text = "Apache Software License"}
 keywords = ["pretalx"]
 authors = [
-    {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
+  {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
 ]
 maintainers = [
-    {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
+  {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
 ]
 
-dependencies = [
-]
+dependencies = []
+
+[project.urls]
+homepage = "{{cookiecutter.repo_url}}"
+repository = "{{cookiecutter.repo_url}}.git"
 
 [project.entry-points."pretalx.plugin"]
 {{cookiecutter.module_name}} = "{{cookiecutter.module_name}}:PretalxPluginMeta"
 
 [build-system]
-requires = [
-    "setuptools",
-]
-
-[project.urls]
-homepage = "{{cookiecutter.repo_url}}"
-repository = "{{cookiecutter.repo_url}}.git"
+build-backend = "setuptools.build_meta"
+requires = ["setuptools"]
 
 [tool.setuptools]
 include-package-data = true
@@ -35,3 +33,6 @@ version = {attr = "{{cookiecutter.module_name}}.__version__"}
 
 [tool.setuptools.packages.find]
 include = ["pretalx*"]
+
+[tool.check-manifest]
+ignore = [".*"]

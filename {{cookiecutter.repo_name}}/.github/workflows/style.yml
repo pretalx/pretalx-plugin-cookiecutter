@@ -25,10 +25,8 @@ jobs:
         with:
           python-version-file: ".github/workflows/python-version.txt"
           cache: "pip"
-      - name: Install pretalx
-        run: pip3 install pretalx
-      - name: Install Dependencies
-        run: pip3 install isort -Ue .
+      - name: Install isort
+        run: pip3 install isort
       - name: Run isort
         run: isort -c .
   flake:
@@ -43,10 +41,8 @@ jobs:
         with:
           python-version-file: ".github/workflows/python-version.txt"
           cache: "pip"
-      - name: Install pretalx
-        run: pip3 install pretalx
       - name: Install Dependencies
-        run: pip3 install flake8 flake8-bugbear -Ue .
+        run: pip3 install flake8 flake8-bugbear
       - name: Run flake8
         run: flake8 .
         working-directory: .
@@ -62,10 +58,8 @@ jobs:
         with:
           python-version-file: ".github/workflows/python-version.txt"
           cache: "pip"
-      - name: Install pretalx
-        run: pip3 install pretalx
       - name: Install Dependencies
-        run: pip3 install black -Ue .
+        run: pip3 install black
       - name: Run black
         run: black --check .
         working-directory: .
@@ -81,31 +75,28 @@ jobs:
         with:
           python-version-file: ".github/workflows/python-version.txt"
           cache: "pip"
-      - name: Install pretalx
-        run: pip3 install pretalx
       - name: Install Dependencies
-        run: pip3 install djhtml -Ue .
+        run: pip3 install djhtml
+      - name: Run docformatter
+        run: find -name "*.html" | xargs djhtml -c
+        working-directory: .
   packaging:
     name: packaging
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install gettext
-        run: sudo apt install gettext
       - name: Set up Python 3.11
         uses: actions/setup-python@v1
         with:
           python-version-file: ".github/workflows/python-version.txt"
           cache: "pip"
-      - name: Install pretalx
-        run: pip3 install pretalx
       - name: Install Dependencies
         run: pip3 install twine check-manifest -Ue .
       - name: Run check-manifest
         run: check-manifest .
         working-directory: .
       - name: Build package
-        run: python setup.py sdist
+        run: python -m build
         working-directory: .
       - name: Check package
         run: twine check dist/*

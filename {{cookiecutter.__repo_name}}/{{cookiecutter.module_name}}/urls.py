@@ -11,5 +11,4 @@ urlpatterns = [
         name="settings",
     ),
 ]
-urlpatterns += router.urls
 {% endif %}

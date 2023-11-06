@@ -9,7 +9,7 @@ Development setup
 
 1. Make sure that you have a working `pretalx development setup`_.
 
-2. Clone this repository, eg to ``local/{{ cookiecutter.repo_name }}``.
+2. Clone this repository, eg to ``local/{{ cookiecutter.__repo_name }}``.
 
 3. Activate the virtual environment you use for pretalx development.
 

@@ -1,5 +1,5 @@
 [project]
-name = "{{cookiecutter.repo_name}}"
+name = "{{cookiecutter.__repo_name}}"
 dynamic = ["version"]
 description = "{{cookiecutter.short_description}}"
 readme = "README.rst"

@@ -1,10 +1,11 @@
 {
 	"human_name": "pretalx FooBar plugin",
-	"module_name": "{{ cookiecutter.human_name.replace('pretalx', '').replace('the', '').strip().replace(' ', '_').replace('-', '_').replace('__', '_') }}",
+	"module_name": "pretalx_{{ cookiecutter.human_name.lower().replace('pretalx', '').replace('the', '').replace('plugin', '').strip().replace(' ', '_').replace('-', '_').replace('__', '_') }}",
 	"short_description": "pretalx plugin for {{ cookiecutter.human_name }}",
 	"author_name": "Your name",
 	"author_email": "your-email@example.org",
-	"repo_url": "https://github.com/{{ cookiecutter.author_email.split('@')[0] }}/{{ cookiecutter.module_name.replace('_', '-') }}",
+  "__repo_name": "{{ cookiecutter.module_name.replace('_', '-') }}",
+  "__model_name": "{{ cookiecutter.module_name.replace('pretalx_', '').split('_')|map('capitalize')|join }}",
+	"repo_url": "https://github.com/{{ cookiecutter.author_email.split('@')[0] }}/{{ cookiecutter.__repo_name }}",
 	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"]
-  "__model_name": "{{ cookiecutter.module_name.split('-')|map('capitalize')|join }}}",
 }

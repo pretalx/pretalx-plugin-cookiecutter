@@ -17,14 +17,13 @@ package using pip. Next, use it to bootstrap your project folder::
 You'll be prompted for some questions. Answer them, and you will find a
 project folder created for you::
 
-    repo_name [pretalx-superplugin]: pretalx-superplugin
-    repo_url [GitHub repository URL]: https://github.com/myuser/pretalx-superplugin
-    module_name [pretalx_superplugin]: pretalx_superplugin
-    human_name [The pretalx super plugin]: Super Plugin
-    author_name [Your name]: J Random Developer
-    author_email [Your email]: jrandom@example.org
-    short_description [Short description]: The best plugin
-    Select category:
+    [1/7] human_name (pretalx FooBar plugin): pretalx JSON plugin
+    [2/7] module_name (pretalx_json):
+    [3/7] short_description (pretalx plugin for pretalx JSON plugin): pretalx plugin for custom JSON exports
+    [4/7] author_name (Your name): Tobias Kunze
+    [5/7] author_email (your-email@example.org): r@rixx.de
+    [6/7] repo_url (https://github.com/r/pretalx-json): https://github.com/rixx/pretalx-json
+    [7/7] Select category
     1 - FEATURE
     2 - INTEGRATION
     3 - CUSTOMIZATION
@@ -32,7 +31,7 @@ project folder created for you::
     5 - RECORDING
     6 - LANGUAGE
     7 - OTHER
-    Choose from 1, 2, 3, 4, 5 [1]: 1
+    Choose from [1/2/3/4/5/6/7] (1): 1
 
 Now, change to the newly created directory::
 

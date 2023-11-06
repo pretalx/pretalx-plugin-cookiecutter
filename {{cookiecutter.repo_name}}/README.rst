@@ -2,6 +2,7 @@
 ==========================
 
 This is a plugin for `pretalx`_.
+{{ cookiecutter.short_description }}
 
 Development setup
 -----------------

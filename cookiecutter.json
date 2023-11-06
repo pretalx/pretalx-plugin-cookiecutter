@@ -1,10 +1,10 @@
 {
-	"repo_name": "pretalx-superplugin",
-	"repo_url": "GitHub repository URL",
-	"module_name": "pretalx_superplugin",
-	"human_name": "The pretalx super plugin",
+	"human_name": "pretalx FooBar plugin",
+	"module_name": "{{ cookiecutter.human_name.replace('pretalx', '').replace('the', '').strip().replace(' ', '_').replace('-', '_').replace('__', '_') }}",
+	"short_description": "pretalx plugin for {{ cookiecutter.human_name }}",
 	"author_name": "Your name",
 	"author_email": "your-email@example.org",
-	"short_description": "Short description",
+	"repo_url": "https://github.com/{{ cookiecutter.author_email.split('@')[0] }}/{{ cookiecutter.module_name.replace('_', '-') }}",
 	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"]
+  "__model_name": "{{ cookiecutter.module_name.split('-')|map('capitalize')|join }}}",
 }

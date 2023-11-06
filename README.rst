@@ -6,7 +6,7 @@ A simple `cookiecutter`_ template to bootstrap a `pretalx`_ plugin.
 Usage
 -----
 
-Let's pretend you want to create a pretalx plugin called "superplugin".
+Let's pretend you want to create a pretalx plugin called "foobar".
 First, create a virtual environment and install the ``cookiecutter``
 package using pip. Next, use it to bootstrap your project folder::
 
@@ -35,7 +35,7 @@ project folder created for you::
 
 Now, change to the newly created directory::
 
-    $ cd pretalx-superplugin
+    $ cd pretalx-foobar
 
 Voilà, there's your plugin structure! See pretalx' `documentation`_ for more info.
 

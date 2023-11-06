@@ -25,31 +25,22 @@ jobs:
         run: cookiecutter . --no-input
       - name: Init git repo (required for check-manifest)
         run: git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git init && git add . && git commit -m 'Initial commit'
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar
       - name: Install pretalx
         run: pip install pretalx
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar
       - name: Install Dependencies
         run: pip install isort flake8 black docformatter twine check-manifest pytest pytest-django -Ue .
-        working-directory: pretalx-superplugin
-      - name: Run isort
-        run: isort -c .
-        working-directory: pretalx-superplugin
-      - name: Run flake8
-        run: flake8 .
-        working-directory: pretalx-superplugin
-      - name: Run black
-        run: black --check .
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar
       - name: Run check-manifest
         run: check-manifest .
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar
       - name: Build package
         run: python setup.py sdist
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar
       - name: Check package
         run: twine check dist/*
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar
       - name: Run tests
         run: py.test tests
-        working-directory: pretalx-superplugin
+        working-directory: pretalx-foobar

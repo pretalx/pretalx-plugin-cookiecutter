@@ -31,5 +31,4 @@ class {{ cookiecutter.__model_name }}Settings(models.Model):
         on_delete=models.CASCADE,
         related_name="{{ cookiecutter.module_name }}_settings",
     )
-    some_setting = models.CharField(max_length=10, default="A")
-{% endif %}
+    some_setting = models.CharField(max_length=10, default="A"){% endif %}

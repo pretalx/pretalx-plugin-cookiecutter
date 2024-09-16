@@ -26,5 +26,4 @@ class {{ cookiecutter.__model_name }}SettingsView(PermissionRequired, FormView):
     def form_valid(self, form):
         form.save()
         messages.success(self.request, _("The {{ cookiecutter.human_name }} settings were updated."))
-        return super().form_valid(form)
-{% endif %}
+        return super().form_valid(form){% endif %}

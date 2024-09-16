@@ -11,5 +11,4 @@ urlpatterns = [
         {{ cookiecutter.__model_name }}SettingsView.as_view(),
         name="settings",
     ),
-]
-{% endif %}
+]{% endif %}

@@ -1,14 +1,14 @@
 {% raw %}{% extends "orga/base.html" %}
 {% load bootstrap4 %}
-{% load i18n %}{% endraw %}
+{% load i18n %}
 
-{% block extra_title %}{{ cookiecutter.human_name }} Settings :: {% endblock extra_title %}
+{% block extra_title %}{% endraw %}{{ cookiecutter.human_name }}{% raw %} Settings :: {% endblock extra_title %}
 
 {% block content %}
-    <h2>{{ cookiecutter.human_name }} Settings</h2>
+    <h2>{% endraw %}{{ cookiecutter.human_name }}{% raw %} Settings</h2>
     <form method="post">
         {% csrf_token %}
         {% bootstrap_form form layout='event' %}
         {% include "orga/includes/submit_row.html" %}
     </form>
-{% endblock content %}
+  {% endblock content %}{% endraw %}

@@ -1,7 +1,7 @@
 from django.contrib import messages
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import FormView
-from pretalx.common.mixins.views import PermissionRequired
+from pretalx.common.views.mixins import PermissionRequired
 
 {% if cookiecutter.category != "LANGUAGE" %}
 from .forms import {{ cookiecutter.__model_name }}SettingsForm

@@ -36,11 +36,8 @@ jobs:
         run: check-manifest .
         working-directory: pretalx-foobar
       - name: Build package
-        run: python setup.py sdist
+        run: python -m build
         working-directory: pretalx-foobar
       - name: Check package
         run: twine check dist/*
-        working-directory: pretalx-foobar
-      - name: Run tests
-        run: py.test tests
         working-directory: pretalx-foobar

@@ -1,14 +1,9 @@
 {% raw %}{% extends "orga/base.html" %}
-{% load bootstrap4 %}
 {% load i18n %}
 
 {% block extra_title %}{% endraw %}{{ cookiecutter.human_name }}{% raw %} Settings :: {% endblock extra_title %}
 
 {% block content %}
     <h2>{% endraw %}{{ cookiecutter.human_name }}{% raw %} Settings</h2>
-    <form method="post">
-        {% csrf_token %}
-        {% bootstrap_form form layout='event' %}
-        {% include "orga/includes/submit_row.html" %}
-    </form>
-  {% endblock content %}{% endraw %}
+    {% include "orga/includes/base_form.html" %}
+{% endblock content %}{% endraw %}

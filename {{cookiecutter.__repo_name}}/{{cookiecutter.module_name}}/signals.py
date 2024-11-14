@@ -1,6 +1,7 @@
 {% if cookiecutter.category == "RECORDING" %}
 from django.dispatch import receiver
 from django.urls import reverse
+
 from pretalx.agenda.signals import register_recording_provider
 from pretalx.orga.signals import nav_event_settings
 
@@ -28,6 +29,7 @@ def {{ cookiecutter.module_name }}_settings(sender, request, **kwargs):
     ]
 {% elif cookiecutter.category == "LANGUAGE" %}
 from django.dispatch import receiver
+
 from pretalx.common.signals import register_locales
 
 
@@ -41,6 +43,7 @@ def register_locales(**kwargs):
 {% else %}
 from django.dispatch import receiver
 from django.urls import reverse
+
 from pretalx.orga.signals import nav_event_settings
 
 

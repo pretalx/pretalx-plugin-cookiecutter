@@ -1,6 +1,5 @@
 from django.db import models
 
-
 {% if cookiecutter.category == "RECORDING" %}
 class {{ cookiecutter.__model_name }}Link(models.Model):
     submission = models.OneToOneField(

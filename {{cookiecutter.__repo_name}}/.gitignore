@@ -85,4 +85,3 @@ pretalx.cfg
 .DS_Store
 
 .pytest_cache
-*.cfg

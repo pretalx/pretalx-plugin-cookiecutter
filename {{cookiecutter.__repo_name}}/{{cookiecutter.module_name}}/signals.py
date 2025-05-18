@@ -14,7 +14,7 @@ def register_data_exporter(sender, **kwargs):
 
 @receiver(nav_event_settings)
 def {{ cookiecutter.module_name }}_settings(sender, request, **kwargs):
-    if not request.user.has_perm("orga.change_settings", request.event):
+    if not request.user.has_perm("event.update_event", request.event):
         return []
     return [
         {
@@ -49,7 +49,7 @@ from pretalx.orga.signals import nav_event_settings
 
 @receiver(nav_event_settings)
 def {{ cookiecutter.module_name }}_settings(sender, request, **kwargs):
-    if not request.user.has_perm("orga.change_settings", request.event):
+    if not request.user.has_perm("event.update_event", request.event):
         return []
     return [
         {

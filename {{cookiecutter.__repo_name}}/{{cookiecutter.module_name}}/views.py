@@ -9,7 +9,7 @@ from .forms import {{ cookiecutter.__model_name }}SettingsForm
 
 
 class {{ cookiecutter.__model_name }}SettingsView(PermissionRequired, FormView):
-    permission_required = "orga.change_settings"
+    permission_required = "event.update_event"
     template_name = "{{ cookiecutter.module_name }}/settings.html"
     form_class = {{ cookiecutter.__model_name }}SettingsForm
 

@@ -86,3 +86,4 @@ locale/
 .DS_Store
 
 .pytest_cache
+uv.lock

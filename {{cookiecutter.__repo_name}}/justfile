@@ -1,0 +1,45 @@
+set shell := ["bash", "-euo", "pipefail", "-c"]
+
+uv_dev := "uv run --extra=dev"
+
+# Format Django templates with djhtml
+[group('linting')]
+djhtml *args="":
+    find . -name "*.html" -not -path '*/vendored/*' -not -path '*/node_modules/*' -not -path '*/htmlcov/*' -not -path '*dist/*' -not -path "*.min.html" -print | xargs {{ uv_dev }} djhtml {{ args }}
+
+# Run ruff format
+[group('linting')]
+format *args="":
+    {{ uv_dev }} ruff format {{ args }}
+
+# Run ruff check
+[group('linting')]
+check *args="":
+    {{ uv_dev }} ruff check {{ args }}
+
+# Run all formatters and linters
+[group('linting')]
+[parallel]
+fmt: format check djhtml
+
+# Check Django templates with djhtml (check only)
+[group('linting')]
+djhtml-check:
+    just djhtml --check
+
+# Run all code quality checks
+[group('linting')]
+fmt-check: (format "--check") check djhtml-check
+
+# Run tests
+[group('testing')]
+test *args="":
+    {{ uv_dev }} pytest tests {{ args }}
+
+# Compile locale files
+localegen:
+    django-admin makemessages -l de_DE -i build -i dist -i "*egg*" `find {{cookiecutter.module_name}}/locale/ -mindepth 1 -maxdepth 1 -type d -printf "-l %f "`
+
+# Generate locale files
+localecompile:
+    django-admin compilemessages

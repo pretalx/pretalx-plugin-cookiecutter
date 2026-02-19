@@ -17,6 +17,8 @@ dependencies = []
 [project.optional-dependencies]
 dev = [
   "djhtml",
+  "pytest",
+  "pytest-django",
   "ruff",
 ]
 
@@ -41,7 +43,7 @@ version = {attr = "{{cookiecutter.module_name}}.__version__"}
 include = ["pretalx*"]
 
 [tool.check-manifest]
-ignore = [".*"]
+ignore = [".*", "tests/*", "justfile"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "pretalx.common.settings.test_settings"

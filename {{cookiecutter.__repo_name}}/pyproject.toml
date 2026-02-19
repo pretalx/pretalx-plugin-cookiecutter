@@ -19,6 +19,7 @@ dependencies = []
 dev = [
   "djhtml",
   "pytest",
+  "pytest-cov",
   "pytest-django",
   "ruff",
 ]
@@ -48,6 +49,7 @@ ignore = [".*", "tests/*", "justfile"]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "pretalx.common.settings.test_settings"
+addopts = "--cov={{cookiecutter.module_name}} --cov-report=term-missing:skip-covered --cov-config=pyproject.toml"
 
 [tool.coverage.run]
 branch = true

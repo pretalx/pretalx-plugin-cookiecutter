@@ -44,6 +44,8 @@ def event(organiser):
             date_to=today + dt.timedelta(days=3),
             organiser=organiser,
         )
+        event.enable_plugin("{{ cookiecutter.module_name }}")
+        event.save()
         for team in organiser.teams.all():
             team.limit_events.add(event)
     return event

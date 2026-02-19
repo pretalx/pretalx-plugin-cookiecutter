@@ -38,6 +38,9 @@ jobs:
       - name: Run tests
         run: just test
         working-directory: pretalx-foobar
+      - name: Clean up generated migrations
+        run: find . -path '*/migrations/0*.py' -delete
+        working-directory: pretalx-foobar
       - name: Run check-manifest
         run: check-manifest .
         working-directory: pretalx-foobar

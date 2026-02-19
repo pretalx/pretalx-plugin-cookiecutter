@@ -6,12 +6,10 @@ A simple `cookiecutter`_ template to bootstrap a `pretalx`_ plugin.
 Usage
 -----
 
-Let's pretend you want to create a pretalx plugin called "foobar".
-First, create a virtual environment and install the ``cookiecutter``
-package using pip. Next, use it to bootstrap your project folder::
+Let's pretend you want to create a pretalx plugin called "foobar"::
 
     $ cd <your-project-folder-parent>
-    $ cookiecutter https://github.com/pretalx/pretalx-plugin-cookiecutter
+    $ uvx cookiecutter https://github.com/pretalx/pretalx-plugin-cookiecutter
 
 
 You'll be prompted for some questions. Answer them, and you will find a
@@ -41,4 +39,4 @@ Voilà, there's your plugin structure! See pretalx' `documentation`_ for more in
 
 .. _pretalx: https://github.com/pretalx/pretalx
 .. _cookiecutter: https://github.com/audreyr/cookiecutter
-.. _documentation: https://docs.pretalx.org/en/latest/developer/plugins/index.html
+.. _documentation: https://docs.pretalx.org/developer/plugins/plugins/

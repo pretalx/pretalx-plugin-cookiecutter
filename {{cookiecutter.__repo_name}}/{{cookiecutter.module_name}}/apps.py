@@ -14,7 +14,10 @@ class PluginApp(AppConfig):
         description = gettext_lazy("{{cookiecutter.short_description}}")
         visible = True
         version = __version__
-        category = "{{cookiecutter.category}}"
+        category = "{{cookiecutter.category}}"{% if cookiecutter.category != "LANGUAGE" %}
+        settings_links = [
+            (gettext_lazy("Settings"), "plugins:{{cookiecutter.module_name}}:settings", {}),
+        ]{% endif %}
 
     def ready(self):
         from . import signals  # NOQA

@@ -32,6 +32,9 @@ jobs:
       - name: Run linters
         run: just fmt-check
         working-directory: pretalx-foobar
+      - name: Generate migrations (freshly created plugin has no migration files)
+        run: just install-pretalx && DJANGO_SETTINGS_MODULE=pretalx.common.settings.test_settings uv run --extra=dev python -m django makemigrations
+        working-directory: pretalx-foobar
       - name: Run tests
         run: just test
         working-directory: pretalx-foobar

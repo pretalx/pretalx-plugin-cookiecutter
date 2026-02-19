@@ -14,6 +14,12 @@ maintainers = [
 
 dependencies = []
 
+[project.optional-dependencies]
+dev = [
+  "djhtml",
+  "ruff",
+]
+
 [project.urls]
 homepage = "{{cookiecutter.repo_url}}"
 repository = "{{cookiecutter.repo_url}}.git"
@@ -36,3 +42,63 @@ include = ["pretalx*"]
 
 [tool.check-manifest]
 ignore = [".*"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "pretalx.common.settings.test_settings"
+
+[tool.coverage.run]
+branch = true
+source = ["{{cookiecutter.module_name}}"]
+omit = ["*/migrations/*", "*/urls.py", "*/tests/*"]
+
+[tool.coverage.report]
+exclude_also = [
+  "def __repr__",
+  "def __str__",
+  "if settings.DEBUG",
+  "NOQA",
+  "noqa",
+  "NotImplementedError",
+]
+
+[tool.ruff.lint]
+extend-select = [
+  "A",      # flake8-builtins
+  "B",      # flake8-bugbear
+  "C4",     # Use comprehensions rather than generators
+  "E",      # pycodestyle errors
+  "ERA",    # Drop commented-out code
+  "F",      # pyflakes
+  "FURB",   # Refactoring
+  "G",      # logging: formatting
+  "INT",    # gettext
+  "LOG",    # logging: logger
+  "N",      # PEP8-naming
+  "PERF",   # Performance issues
+  "PGH",    # no blanket noqa
+  "PIE",    # Mixed checks
+  "PL",     # pylint
+  "PLC0415",# pylint: top-level imports
+  "PT",     # pytest
+  "PTH",    # use pathlib
+  "RSE",    # raising exceptions
+  "RUF",    # Ruff
+  "SIM",    # Possible simplifications
+  "T10",    # Catch debugger statements
+  "T20",    # Catch print statements
+  "TID",    # Tidy imports
+  "UP",     # pyupgrade
+  "W",      # pycodestyle warnings
+]
+ignore = [
+  "E501",   # Line too long
+  "PLR",    # Refactoring: Too many branches, arguments, statements, etc
+  "RUF001", # ambiguous characters
+  "RUF002", # ambiguous characters
+  "RUF003", # ambiguous characters
+  "RUF012", # Mutable default in class attribute is just how django rolls
+  "RUF100", # Unused noqa; problematic when run in isolation
+]
+
+[tool.ruff.lint.flake8-pytest-style]
+parametrize-values-type = "tuple"

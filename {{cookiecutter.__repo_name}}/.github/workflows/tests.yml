@@ -28,7 +28,5 @@ jobs:
         with:
           enable-cache: true
       - uses: extractions/setup-just@v3
-      - name: Install pretalx and plugin
-        run: uv pip install --system pretalx -e ".[dev]"
       - name: Run tests
         run: just test

@@ -30,10 +30,21 @@ djhtml-check:
 [group('linting')]
 fmt-check: (format "--check") check djhtml-check
 
-# Run tests
+# Run tests (installs pretalx if not already present)
 [group('testing')]
 test *args="":
+    uv run --extra=dev python -c "import pretalx" 2>/dev/null || just install-pretalx
     uv run --extra=dev pytest tests "$@"
+
+# Install pretalx from git
+[group('testing')]
+install-pretalx:
+    uv pip install "pretalx[dev] @ git+https://github.com/pretalx/pretalx@main"
+
+# Install a local editable copy of pretalx (for development)
+[group('testing')]
+install-pretalx-local path:
+    uv pip install -e "$1[dev]"
 
 # Compile locale files
 localegen:

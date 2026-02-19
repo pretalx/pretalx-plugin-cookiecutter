@@ -27,9 +27,8 @@ jobs:
       - name: Init git repo (required for check-manifest)
         run: git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git init && git add . && git commit -m 'Initial commit'
         working-directory: pretalx-foobar
-      - name: Install pretalx and plugin
-        run: uv pip install --system pretalx twine check-manifest build -e ".[dev]"
-        working-directory: pretalx-foobar
+      - name: Install packaging tools
+        run: uv pip install --system twine check-manifest build
       - name: Run linters
         run: just fmt-check
         working-directory: pretalx-foobar

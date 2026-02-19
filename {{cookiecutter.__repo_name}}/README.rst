@@ -15,25 +15,33 @@ Development setup
 
 4. Run ``pip install -e .`` within this directory to register this application with pretalx's plugin registry.
 
-5. Run ``make`` within this directory to compile translations.
-
-6. Restart your local pretalx server. This plugin should show up in the plugin list shown on startup in the console.
+5. Restart your local pretalx server. This plugin should show up in the plugin list shown on startup in the console.
    You can now use the plugin from this repository for your events by enabling it in the 'plugins' tab in the settings.
 
-This plugin has CI set up to enforce a few code style rules. To check locally, you need these packages installed::
+This project uses `just`_ as a task runner and `uv`_ for dependency management.
 
-    pip install flake8 flake8-bugbear isort black
+Code style
+~~~~~~~~~~
 
-To check your plugin for rule violations, run::
+To check your plugin for code style violations, run::
 
-    black --check .
-    isort -c .
-    flake8 .
+    just fmt-check
 
-You can auto-fix some of these issues by running::
+To auto-fix formatting issues, run::
 
-    isort .
-    black .
+    just fmt
+
+Testing
+~~~~~~~
+
+To run the test suite, run::
+
+    just test
+
+This will automatically install pretalx if it's not already present. If you want
+to test against a local pretalx checkout instead, run::
+
+    just install-pretalx-local /path/to/pretalx
 
 
 License
@@ -46,3 +54,5 @@ Released under the terms of the Apache License 2.0
 
 .. _pretalx: https://github.com/pretalx/pretalx
 .. _pretalx development setup: https://docs.pretalx.org/en/latest/developer/setup.html
+.. _just: https://just.systems/
+.. _uv: https://docs.astral.sh/uv/

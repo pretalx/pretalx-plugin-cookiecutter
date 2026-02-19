@@ -11,26 +11,27 @@ jobs:
     name: lint and test
     runs-on: ubuntu-latest
     steps:
-      - name: Install system dependencies
-        run: sudo apt update && sudo apt install gettext
-      - uses: actions/checkout@v4
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
-          python-version: 3.11
-          cache: "pip"
+          python-version: "3.14"
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - uses: extractions/setup-just@v3
       - name: Install cookiecutter
-        run: pip install cookiecutter
+        run: uv pip install --system cookiecutter
       - name: Run cookiecutter
         run: cookiecutter . --no-input
       - name: Init git repo (required for check-manifest)
         run: git config --global user.email "you@example.com" && git config --global user.name "Your Name" && git init && git add . && git commit -m 'Initial commit'
         working-directory: pretalx-foobar
-      - name: Install pretalx
-        run: pip install pretalx
+      - name: Install pretalx and plugin
+        run: uv pip install --system pretalx twine check-manifest build -e .
         working-directory: pretalx-foobar
-      - name: Install Dependencies
-        run: pip install isort flake8 black docformatter twine check-manifest pytest pytest-django -Ue .
+      - name: Run linters
+        run: just fmt-check
         working-directory: pretalx-foobar
       - name: Run check-manifest
         run: check-manifest .

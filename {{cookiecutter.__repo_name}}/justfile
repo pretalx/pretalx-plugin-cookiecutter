@@ -4,7 +4,7 @@ set positional-arguments
 # Format Django templates with djhtml
 [group('linting')]
 djhtml *args="":
-    find . -name "*.html" -not -path '*/vendored/*' -not -path '*/node_modules/*' -not -path '*/htmlcov/*' -not -path '*dist/*' -not -path "*.min.html" -print | xargs uv run --extra=dev djhtml "$@"
+    find . -name "*.html" -not -path '*/.venv/*' -not -path '*/vendored/*' -not -path '*/node_modules/*' -not -path '*/htmlcov/*' -not -path '*dist/*' -not -path "*.min.html" -print | xargs uv run --extra=dev djhtml "$@"
 
 # Run ruff format
 [group('linting')]

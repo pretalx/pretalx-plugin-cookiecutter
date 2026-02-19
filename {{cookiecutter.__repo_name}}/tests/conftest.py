@@ -1,4 +1,4 @@
-{% if cookiecutter.category != "LANGUAGE" %}
+{% if cookiecutter.category != "LANGUAGE" -%}
 import datetime as dt
 
 import pytest
@@ -91,4 +91,4 @@ def orga_client(orga_user, client):
 def review_client(review_user, client):
     client.force_login(review_user)
     return client
-{% endif %}
+{%- endif %}

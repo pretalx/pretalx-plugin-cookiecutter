@@ -1,4 +1,4 @@
-{% if cookiecutter.category == "RECORDING" %}
+{% if cookiecutter.category == "RECORDING" -%}
 from django.dispatch import receiver
 from django.urls import reverse
 
@@ -27,7 +27,7 @@ def {{ cookiecutter.module_name }}_settings(sender, request, **kwargs):
             == "plugins:{{ cookiecutter.module_name }}:settings",
         }
     ]
-{% elif cookiecutter.category == "LANGUAGE" %}
+{%- elif cookiecutter.category == "LANGUAGE" %}
 from django.dispatch import receiver
 
 from pretalx.common.signals import register_locales
@@ -40,7 +40,7 @@ def register_locales(**kwargs):
         if "{{ cookiecutter.module_name }}" not in getattr(event, "plugin_list", None) or []:
             return []
     return ["my-lang"]
-{% else %}
+{%- else %}
 from django.dispatch import receiver
 from django.urls import reverse
 
@@ -62,4 +62,4 @@ def {{ cookiecutter.module_name }}_settings(sender, request, **kwargs):
             == "plugins:{{ cookiecutter.module_name }}:settings",
         }
     ]
-{% endif %}
+{%- endif %}

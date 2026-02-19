@@ -1,4 +1,4 @@
-{% if cookiecutter.category != "LANGUAGE" %}
+{% if cookiecutter.category != "LANGUAGE" -%}
 from django.urls import re_path
 
 from pretalx.event.models.event import SLUG_REGEX

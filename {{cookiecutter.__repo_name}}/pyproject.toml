@@ -12,6 +12,7 @@ maintainers = [
   {name = "{{cookiecutter.author_name}}", email = "{{cookiecutter.author_email}}"},
 ]
 
+requires-python = ">=3.11"
 dependencies = []
 
 [project.optional-dependencies]

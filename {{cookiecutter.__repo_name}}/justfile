@@ -8,12 +8,12 @@ djhtml *args="":
 
 # Run ruff format
 [group('linting')]
-format *args="":
+format *args=".":
     uv run --extra=dev ruff format "$@"
 
 # Run ruff check
 [group('linting')]
-check *args="":
+check *args=".":
     uv run --extra=dev ruff check "$@"
 
 # Run all formatters and linters

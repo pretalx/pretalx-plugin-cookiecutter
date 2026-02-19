@@ -1,4 +1,4 @@
-{% if cookiecutter.category != "LANGUAGE" %}
+{% if cookiecutter.category != "LANGUAGE" -%}
 import pytest
 from django.urls import reverse
 
@@ -24,7 +24,7 @@ def test_reviewer_cannot_access_settings(review_client, event):
         ),
     )
     assert response.status_code == 404
-{% else %}
+{%- else -%}
 def test_plugin_importable():
     import {{cookiecutter.module_name}}  # noqa: F401
-{% endif %}
+{%- endif %}

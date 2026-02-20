@@ -4,8 +4,9 @@
 	"short_description": "pretalx plugin for {{ cookiecutter.human_name }}",
 	"author_name": "Your name",
 	"author_email": "your-email@example.org",
-  "__repo_name": "{{ cookiecutter.module_name.replace('_', '-') }}",
-  "__model_name": "{{ cookiecutter.module_name.replace('pretalx_', '').split('_')|map('capitalize')|join }}",
 	"repo_url": "https://github.com/{{ cookiecutter.author_email.split('@')[0] }}/{{ cookiecutter.__repo_name }}",
+	"__repo_name": "{{ cookiecutter.module_name.replace('_', '-') }}",
+	"__model_name": "{{ cookiecutter.module_name.replace('pretalx_', '').split('_')|map('capitalize')|join }}",
+	"__github_path": "{{ cookiecutter.repo_url.replace('https://github.com/', '').replace('http://github.com/', '').replace('.git', '').strip('/') if 'github.com' in cookiecutter.repo_url else '' }}",
 	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"]
 }

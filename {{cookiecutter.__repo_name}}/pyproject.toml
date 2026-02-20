@@ -53,6 +53,7 @@ addopts = "--cov={{cookiecutter.module_name}} --cov-report=term-missing:skip-cov
 
 [tool.coverage.run]
 branch = true
+relative_files = true
 source = ["{{cookiecutter.module_name}}"]
 omit = ["*/migrations/*", "*/urls.py", "*/tests/*"]
 

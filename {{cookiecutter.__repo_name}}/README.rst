@@ -1,10 +1,10 @@
 {{cookiecutter.human_name}}
 ==========================
-
-.. image:: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/wiki/{{ cookiecutter.author_email.split('@')[0] }}/{{ cookiecutter.__repo_name }}/python-coverage-comment-action-badge.json
-   :target: {{ cookiecutter.repo_url }}
+{% if cookiecutter.__github_path %}
+.. image:: https://raw.githubusercontent.com/{{ cookiecutter.__github_path }}/python-coverage-comment-action-data/badge.svg
+   :target: https://htmlpreview.github.io/?https://github.com/{{ cookiecutter.__github_path }}/blob/python-coverage-comment-action-data/htmlcov/index.html
    :alt: Coverage
-
+{% endif %}
 This is a plugin for `pretalx`_.
 {{ cookiecutter.short_description }}
 

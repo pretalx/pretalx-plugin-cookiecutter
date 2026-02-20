@@ -24,11 +24,11 @@ dev = [
   "ruff",
 ]
 
-[project.urls]
+{% if cookiecutter.repo_url %}[project.urls]
 homepage = "{{cookiecutter.repo_url}}"
-repository = "{{cookiecutter.repo_url}}.git"
+repository = "{{cookiecutter.repo_url}}"
 
-[project.entry-points."pretalx.plugin"]
+{% endif %}[project.entry-points."pretalx.plugin"]
 {{cookiecutter.module_name}} = "{{cookiecutter.module_name}}:PretalxPluginMeta"
 
 [build-system]

@@ -9,6 +9,9 @@ class {{ cookiecutter.__model_name }}Link(models.Model):
     )
     video_id = models.CharField(max_length=20)
 
+    def __str__(self):
+        return f"{{ cookiecutter.__model_name }}Link(event={self.submission.event}, submission={self.submission})"
+
     @property
     def player_link(self):
         return f"https://www.{{ cookiecutter.module_name }}.com/embed/{self.video_id}"
@@ -30,4 +33,7 @@ class {{ cookiecutter.__model_name }}Settings(models.Model):
         on_delete=models.CASCADE,
         related_name="{{ cookiecutter.module_name }}_settings",
     )
-    some_setting = models.CharField(max_length=10, default="A"){% endif %}
+    some_setting = models.CharField(max_length=10, default="A")
+
+    def __str__(self):
+        return f"{{ cookiecutter.__model_name }}Settings(event={self.event})"{% endif %}

@@ -6,6 +6,7 @@ from django.core import management
 from django_scopes import scopes_disabled
 
 from pretalx.event.domain.event import initialise_event
+from pretalx.event.domain.plugins import enable_plugin
 from pretalx.event.models import Event, Organiser, Team
 from pretalx.person.models import User
 
@@ -46,7 +47,7 @@ def event(organiser):
             organiser=organiser,
         )
         initialise_event(event)
-        event.enable_plugin("{{ cookiecutter.module_name }}")
+        enable_plugin(event, "{{ cookiecutter.module_name }}")
         event.save()
         for team in organiser.teams.all():
             team.limit_events.add(event)

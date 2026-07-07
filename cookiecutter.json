@@ -8,5 +8,6 @@
 	"__repo_name": "{{ cookiecutter.module_name.replace('_', '-') }}",
 	"__model_name": "{{ cookiecutter.module_name.replace('pretalx_', '').split('_')|map('capitalize')|join }}",
 	"__github_path": "{{ cookiecutter.repo_url.replace('https://github.com/', '').replace('http://github.com/', '').replace('.git', '').strip('/') if 'github.com' in cookiecutter.repo_url else '' }}",
-	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"]
+	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"],
+	"_copy_without_render": ["justfile"]
 }

@@ -1,10 +1,6 @@
 {{cookiecutter.human_name}}
 ==========================
-{% if cookiecutter.__github_path %}
-.. image:: https://raw.githubusercontent.com/{{ cookiecutter.__github_path }}/python-coverage-comment-action-data/badge.svg
-   :target: https://htmlpreview.github.io/?https://github.com/{{ cookiecutter.__github_path }}/blob/python-coverage-comment-action-data/htmlcov/index.html
-   :alt: Coverage
-{% endif %}
+
 This is a plugin for `pretalx`_.
 {{ cookiecutter.short_description }}
 

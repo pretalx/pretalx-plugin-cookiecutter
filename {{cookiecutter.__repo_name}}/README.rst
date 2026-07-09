@@ -1,8 +1,26 @@
 {{cookiecutter.human_name}}
 ==========================
 
+.. image:: https://img.shields.io/pypi/v/{{cookiecutter.__repo_name}}.svg
+   :target: https://pypi.org/project/{{cookiecutter.__repo_name}}/
+   :alt: PyPI version
+
 This is a plugin for `pretalx`_.
 {{ cookiecutter.short_description }}
+
+Installation
+------------
+
+Install the plugin with pip, in the same environment as your pretalx
+installation::
+
+    (env)$ python -m pip install {{cookiecutter.__repo_name}}
+
+Afterwards, run ``migrate`` and ``rebuild`` and restart your pretalx services,
+just like after any pretalx update (see `performing updates`_ in the
+administrator documentation).
+
+You can then enable the plugin under "Settings → Plugins" in your event settings.
 
 Development setup
 -----------------
@@ -61,3 +79,4 @@ Released under the terms of the Apache License 2.0
 .. _pretalx development setup: https://docs.pretalx.org/en/latest/developer/setup.html
 .. _just: https://just.systems/
 .. _uv: https://docs.astral.sh/uv/
+.. _performing updates: https://docs.pretalx.org/administrator/maintenance/#performing-updates

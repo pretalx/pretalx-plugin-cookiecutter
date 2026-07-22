@@ -5,6 +5,7 @@
 	"author_name": "Your name",
 	"author_email": "your-email@example.org",
 	"repo_url": "https://github.com/{{ cookiecutter.author_email.split('@')[0] }}/{{ cookiecutter.module_name.replace('_', '-') }}",
+	"create_github_repo": ["no", "yes"],
 	"__repo_name": "{{ cookiecutter.module_name.replace('_', '-') }}",
 	"__model_name": "{{ cookiecutter.module_name.replace('pretalx_', '').split('_')|map('capitalize')|join }}",
 	"category": ["FEATURE", "INTEGRATION", "CUSTOMIZATION", "EXPORTER", "RECORDING", "LANGUAGE", "OTHER"],
